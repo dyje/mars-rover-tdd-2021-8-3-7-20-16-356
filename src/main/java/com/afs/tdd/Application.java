@@ -13,9 +13,11 @@ public class Application {
             move();
         } else if (command.equals("L")) {
             turnLeft();
+        } else if (command.equals("R")) {
+            turnRight();
         }
-
     }
+
 
     private void move() {
         final String direction = roverStatus.getDirection();
@@ -47,6 +49,19 @@ public class Application {
         } else if (direction.equals("W")) {
             newDirection = "S";
         }
+
+        roverStatus = new RoverStatus(locationX, locationY, newDirection);
+    }
+
+    private void turnRight() {
+        final String direction = roverStatus.getDirection();
+        final int locationX = roverStatus.getLocationX();
+        final int locationY = roverStatus.getLocationY();
+        String newDirection = direction;
+        if (direction.equals("N")){
+            newDirection = "E";
+        }else
+            return;
 
         roverStatus = new RoverStatus(locationX, locationY, newDirection);
     }
