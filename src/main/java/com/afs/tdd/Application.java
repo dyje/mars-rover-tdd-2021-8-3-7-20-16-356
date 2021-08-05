@@ -11,8 +11,10 @@ public class Application {
     public void executeCommand(String command) {
         if (command.equals("M")) {
             move();
-        } else
-            return;
+        } else if (command.equals("L")) {
+            turnLeft();
+        }
+
     }
 
     private void move() {
@@ -25,12 +27,24 @@ public class Application {
             roverStatus = new RoverStatus(locationX, locationY - 1, direction);
         } else if (direction.equals("E")) {
             roverStatus = new RoverStatus(locationX + 1, locationY, direction);
-        } else if(direction.equals("W")){
-            roverStatus = new RoverStatus(locationX-1, locationY, direction);
+        } else if (direction.equals("W")) {
+            roverStatus = new RoverStatus(locationX - 1, locationY, direction);
         }
 
     }
 
+    private void turnLeft() {
+        final String direction = roverStatus.getDirection();
+        final int locationX = roverStatus.getLocationX();
+        final int locationY = roverStatus.getLocationY();
+        String newDirection = direction;
+        if (direction.equals("N")) {
+            newDirection = "W";
+        } else
+            return;
+
+        roverStatus = new RoverStatus(locationX, locationY, newDirection);
+    }
 
     public RoverStatus getRoverStatus() {
         return roverStatus;
