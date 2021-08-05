@@ -27,8 +27,7 @@ public class Application {
             roverStatus = new RoverStatus(locationX + 1, locationY, direction);
         } else if(direction.equals("W")){
             roverStatus = new RoverStatus(locationX-1, locationY, direction);
-        }else
-            return;
+        }
 
     }
 
