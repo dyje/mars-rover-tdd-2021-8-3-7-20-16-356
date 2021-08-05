@@ -58,11 +58,11 @@ public class Application {
         final int locationX = roverStatus.getLocationX();
         final int locationY = roverStatus.getLocationY();
         String newDirection = direction;
-        if (direction.equals("N")){
+        if (direction.equals("N")) {
             newDirection = "E";
-        }else
-            return;
-
+        } else if (direction.equals("S")) {
+            newDirection = "W";
+        }
         roverStatus = new RoverStatus(locationX, locationY, newDirection);
     }
 
