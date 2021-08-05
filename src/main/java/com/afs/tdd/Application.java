@@ -62,6 +62,8 @@ public class Application {
             newDirection = "E";
         } else if (direction.equals("S")) {
             newDirection = "W";
+        } else if (direction.equals("E")) {
+            newDirection = "S";
         }
         roverStatus = new RoverStatus(locationX, locationY, newDirection);
     }
