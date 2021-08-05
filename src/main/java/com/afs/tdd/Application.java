@@ -40,10 +40,12 @@ public class Application {
         String newDirection = direction;
         if (direction.equals("N")) {
             newDirection = "W";
-        } else if (direction.equals("S")){
+        } else if (direction.equals("S")) {
             newDirection = "E";
-        } else if (direction.equals("E")){
+        } else if (direction.equals("E")) {
             newDirection = "N";
+        } else if (direction.equals("W")) {
+            newDirection = "S";
         }
 
         roverStatus = new RoverStatus(locationX, locationY, newDirection);
