@@ -23,6 +23,8 @@ public class Application {
             roverStatus = new RoverStatus(locationX, locationY + 1, direction);
         } else if (direction.equals("S")) {
             roverStatus = new RoverStatus(locationX, locationY - 1, direction);
+        } else if (direction.equals("E")) {
+            roverStatus = new RoverStatus(locationX + 1, locationY, direction);
         } else
             return;
 
