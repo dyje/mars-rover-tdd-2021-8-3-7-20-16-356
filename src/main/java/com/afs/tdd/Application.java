@@ -40,8 +40,9 @@ public class Application {
         String newDirection = direction;
         if (direction.equals("N")) {
             newDirection = "W";
-        } else
-            return;
+        } else if (direction.equals("S")){
+            newDirection = "E";
+        }
 
         roverStatus = new RoverStatus(locationX, locationY, newDirection);
     }
