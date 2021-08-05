@@ -21,6 +21,8 @@ public class Application {
         final int locationY = roverStatus.getLocationY();
         if (direction.equals("N")) {
             roverStatus = new RoverStatus(locationX, locationY + 1, direction);
+        } else if (direction.equals("S")) {
+            roverStatus = new RoverStatus(locationX, locationY - 1, direction);
         } else
             return;
 
